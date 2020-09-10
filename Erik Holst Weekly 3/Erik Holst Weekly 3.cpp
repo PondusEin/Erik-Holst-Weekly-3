@@ -48,6 +48,7 @@ void play(int difficulty)
 	}
 	
 	std::cout << "You guessed correctly in " << tries << " tries\n";
+
 	if (tries < highscore) 
 		highscore = tries;
 		std::cout << "Your highschore is " << highscore << " tries\n";
