@@ -5,20 +5,43 @@
 int highscore(30);
 
 int randint(int max_size) {
-
+	std::srand(static_cast<unsigned int>(std::time(nullptr)));
+	int anumber{0};
+	switch (max_size){
+		case 1:
+			anumber = rand() % 5 + 1;
+			break;
+		case 2:
+			anumber = rand() % 10 + 1;
+			break;
+		case 3:
+			anumber = rand() % 30 + 1;
+			break;
+	}
+	return anumber;
 }
 void play(int difficulty)
 {
+	int guess;
+	bool win = false;
+	int ran_num = randint(difficulty);
+	int tries{ 0 };
+	while (true) {
 
-	int anumber{ rand() % 30 + 1 };
-	int rand_1 = rand() % 5 + 1;
-	int rand_2 = rand() % 10 + 1;
-	int rand_3 = rand() % 30 + 1;
-
-
+		std::cout << ran_num;
+		std::cin >> guess;
+		tries++;
+		if (guess == ran_num) {
+			break;
+		}
+		else if (guess > ran_num)
+			std::cout << "Guess lower\n";
+		else if (guess < ran_num)
+			std::cout << "Guess higher\n";
+	}
 	
-	
-	std::srand(static_cast<unsigned int>(std::time(nullptr)));
+	std::cout << "You guessed correctly in" << tries << "tries\n";
+
 
 }
 
