@@ -6,7 +6,10 @@ int highscore(30);
 void play(int difficulty)
 {
 
-
+	rand() % 30 + 1;
+	int rand_1 = rand() % 30 + 1;
+	int rand_2 = rand() % 10 + 1;
+	int rand_3 = rand() % 30 + 1;
 
 
 
