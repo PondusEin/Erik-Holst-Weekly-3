@@ -1,24 +1,26 @@
 #include <iostream>
 #include <stdlib.h>
+#include <cstdlib> // for std::rand() and std::srand()
+#include <ctime> // for std::time()
 int highscore(30);
 
+int randint(int max_size) {
 
+}
 void play(int difficulty)
 {
 
-	rand() % 30 + 1;
-	int rand_1 = rand() % 30 + 1;
+	int anumber{ rand() % 30 + 1 };
+	int rand_1 = rand() % 5 + 1;
 	int rand_2 = rand() % 10 + 1;
 	int rand_3 = rand() % 30 + 1;
 
 
+	
+	
+	std::srand(static_cast<unsigned int>(std::time(nullptr)));
 
 }
-
-
-
-
-
 
 int main()
 {
