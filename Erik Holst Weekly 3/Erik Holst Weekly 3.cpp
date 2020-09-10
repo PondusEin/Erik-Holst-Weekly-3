@@ -20,6 +20,13 @@ int randint(int max_size) {
 	}
 	return anumber;
 }
+
+void doPrint() {
+	std::cout << "\nPlease choose a difficulty" << std::endl;
+
+	std::cout << "[1] Easy	(1-5)\n[2] Medium	(1-10)\n[3] Hard	(1-30)" << std::endl;
+}
+
 void play(int difficulty)
 {
 	int guess;
@@ -28,7 +35,7 @@ void play(int difficulty)
 	int tries{ 0 };
 	while (true) {
 
-		std::cout << ran_num;
+		//std::cout << ran_num;
 		std::cin >> guess;
 		tries++;
 		if (guess == ran_num) {
@@ -40,17 +47,19 @@ void play(int difficulty)
 			std::cout << "Guess higher\n";
 	}
 	
-	std::cout << "You guessed correctly in" << tries << "tries\n";
-
-
+	std::cout << "You guessed correctly in " << tries << " tries\n";
+	if (tries < highscore) 
+		highscore = tries;
+		std::cout << "Your highschore is " << highscore << " tries\n";
+	
+	doPrint();
 }
+
 
 int main()
 {
-	std::cout << "***Welcome to Guess a number by Erik Holst***" << '\n' << std::endl;
-	std::cout << "Please choose a difficulty" << std::endl;
-
-	std::cout << "[1] Easy\n[2] Medium\n[3] Hard" << std::endl;
+	std::cout << "***Welcome to Guess a number by Erik Holst***" << std::endl;
+	doPrint();
 	while (true)
 	{
 		int x;
